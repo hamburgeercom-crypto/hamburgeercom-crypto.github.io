@@ -1,0 +1,51 @@
+/* Shared site styles */
+:root{
+  --accent:#0b3d91;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --bg:#f4f6fb;
+  --shadow: 0 6px 18px rgba(12,24,60,0.08);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);color:#0b1220;margin:0}
+.container{max-width:1100px;margin:28px auto;padding:0 20px}
+.main-nav{display:flex;gap:14px;align-items:center;padding:14px 20px;background:linear-gradient(90deg,rgba(11,61,145,0.98),rgba(7,45,105,0.95));}
+.main-nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px}
+.main-nav a:hover{background:rgba(255,255,255,0.08)}
+.card{background:var(--card);padding:18px;border-radius:10px;box-shadow:var(--shadow);margin-bottom:18px}
+.hero{display:flex;gap:18px;align-items:center;justify-content:space-between}
+.hero h1{margin:0;font-size:1.4rem;color:var(--accent)}
+.hero h2{margin:6px 0 12px;font-weight:600;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card h3{margin-top:0}
+.blank{display:inline-block;min-width:120px;border-bottom:2px dotted var(--muted);padding:4px 6px}
+.placeholder{max-width:180px;height:auto;opacity:0.9;border-radius:6px}
+.hero-media{display:flex;align-items:center}
+.video-placeholder, .chart-placeholder{background:#eef3ff;border:1px dashed #cfe0ff;padding:12px;border-radius:8px;text-align:center;color:var(--muted)}
+.site-footer{padding:12px 20px;text-align:center;color:var(--muted);font-size:0.9rem}
+@media (max-width:720px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .placeholder{max-width:120px}
+}
+
+/* Visible hint helper (can be hidden by adding `hide-hints` to <body>) */
+/* Hint-related styles removed (hints.js and hint UI not used) */
+/* Responsive media embed (YouTube, Vimeo, etc.) */
+.media-embed{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;background:#000}
+.media-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.media-caption{font-size:0.85rem;color:var(--muted);margin-top:8px}
+
+/* Fallback thumbnail/link when iframe embedding is blocked */
+.video-fallback{display:flex;gap:12px;align-items:center;margin-top:10px}
+.video-fallback img{width:220px;max-width:40%;border-radius:6px;box-shadow:var(--shadow)}
+.video-fallback a{color:var(--accent);font-weight:600;text-decoration:none}
+.video-fallback .fallback-note{color:var(--muted);font-size:0.9rem}
+
+/* Ensure <p> lines inside cards render as a continuous paragraph (no extra gap) */
+.card p{margin:0;line-height:1.6}
+.card p + p{margin-top:0}
+
+/* Strategy inline grouping: render multiple <p> as one continuous paragraph */
+.strategy p{display:inline;margin-right:0.6em}
+.strategy .label{font-weight:700;margin-right:0.25em}
+/* strategy .hint rule removed */
