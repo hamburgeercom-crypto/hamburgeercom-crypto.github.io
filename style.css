@@ -49,3 +49,6 @@ body{font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);
 .strategy p{display:inline;margin-right:0.6em}
 .strategy .label{font-weight:700;margin-right:0.25em}
 /* strategy .hint rule removed */
+
+/* Page-specific override: remove dotted underline for blanks on costquality page */
+.no-blank-dots .blank{border-bottom:none}
